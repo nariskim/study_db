@@ -15,6 +15,23 @@ create table member (
 
 );
 
+-- 테이블 삭제
+
+drop table member2;
+
+drop table book;
+
+create table book (
+	seq int,
+	bookname varchar(100),
+    bookfirm varchar(100),
+    author varchar(100),
+    price int
+
+);
+
+
+
 create table member2 (
 	seq int,
     name varchar(100),
@@ -23,5 +40,7 @@ create table member2 (
 
 );
 
+
+-- 
 
 
