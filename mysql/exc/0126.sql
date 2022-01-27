@@ -1,3 +1,4 @@
+use world;
 CREATE TABLE IF NOT EXISTS `book5` (
   `no` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NULL,
@@ -69,6 +70,6 @@ select
 a.comment
 ,b.name
 from review5 a
-left join book5 b on a.book5_no = a.no
+left join book5 b on a.book5_no = b.no
 -- inner join review5 b on b.book5_no = a.no
 ;
