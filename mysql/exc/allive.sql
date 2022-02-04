@@ -101,13 +101,13 @@ insert into infrCodeGroup (
 ifcgSeq
 ,ifcgName
 ) values (
-'10'
-,'infrmembersnsinfrmembersnsinfrmembersnsinfrmemberprojectinfrmembercontactinfrmembersns'
+'14'
+,''
 );
 
 select * from infrCodeGroup;
 
-DELETE FROM infrCodeGroup WHERE ifcgSeq = 9;
+DELETE FROM infrCodeGroup WHERE ifcgSeq = 1;
 
 
 
@@ -116,9 +116,9 @@ ifcdSeq
 ,ifcdName
 ,infrCodeGroup_ifcgSeq
 ) values (
-'3'
-,'기타'
-,'1'
+'2'
+,'인스타그램'
+,'13'
 )
 ;
 drop table ifmaMemberAddress;
@@ -298,4 +298,35 @@ CREATE TABLE IF NOT EXISTS `infrMemberContact` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_unicode_ci
+;
+
+
+select
+ifmmName
+, ifmmColor
+, ifmcMobileNum
+from infrmember
+left join infrMemberContact on infrMember.ifmmSeq = infrMemberContact.ifmcSeq
+;
+
+select * from infrcode where ifcdSeq = '1';
+
+
+select
+a.ifcgSeq
+,a.ifcgName
+,b. ifcdSeq
+,b.ifcdName
+from infrcodegroup a
+left join infrcode b on b.ifcgSeq = a.ifcgSeq
+-- left join b on b.
+;
+
+select
+a.ifmmseq
+,a.ifmmName
+,a.ifmmgendercd
+,b.ifcdname
+from infrmember a
+left join infrcode b on b.ifcdseq = a.ifmmgendercd
 ;

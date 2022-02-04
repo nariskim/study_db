@@ -41,14 +41,15 @@ code
 )
 ;
 
-select * from codeGroup;
+select * from infrCodeGroup;
+
 
 
 select
-a.seq
-,a.name
-,b.code
-,b.name
+a.seq 
+,a.name 
+,b.code 
+,b.name 
 from codeGroup a
 left join code b on b.codeGroup_seq = a.seq
 -- left join b on b.
