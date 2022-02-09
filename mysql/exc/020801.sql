@@ -1,4 +1,4 @@
-
+use nct;
 INSERT INTO `nct`.`infrcodegroup`
 (
 `ifcgName`,
