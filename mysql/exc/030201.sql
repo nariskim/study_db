@@ -1,4 +1,4 @@
-use nct;
+use allyoung;
 --- 쿠폰 조회 ---
 select
 	a.oymbSeq
@@ -39,6 +39,25 @@ select
 a.oycgSeq
 , a.oycgName
 from allyoung.oycgcode a
+
 where 1=1
 AND oycgDelNy = 0
 ;
+
+--- 상품 조회 (가격대) ---
+select
+
+a.oypdCate
+	,(select oyctName from oyCate where oyctSeq = a.oypdCate) as oypdCateName    
+, a.oypdBrandCd
+	,(select oycdName from oyCode where oycdSeq = a.oypdbrandCd) as oypdBrandName
+, a.oypdName
+, a.oypdPrice
+from allyoung.oyProduct a
+where 1=1
+AND oypdDelNy = 0
+AND 20000<=a.oypdPrice
+AND a.oypdPrice<=40000
+order by a.oypdBrandCd asc
+;
+
